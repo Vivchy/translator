@@ -24,6 +24,7 @@ def main(parent_folder):
     # user-agent
     options.add_argument("user-agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0")
     options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument('--headless')
     driver = webdriver.Chrome(
         executable_path='G:\\Project_Python\\translator google\\chromedriver\\chromedriver.exe',
         options=options
@@ -57,7 +58,7 @@ def main(parent_folder):
                                 print('файл переведен ', path_2)
                             except Exception as e:
                                 print(e)
-                            save_file = f'{path}\\translate_{num}.txt'
+                            save_file = f'{path}\\translate_{num}.docx'
 
                             with open(save_file, 'w', encoding='utf-8') as fl:
                                 fl.write(new_text)
